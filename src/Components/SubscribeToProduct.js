@@ -28,12 +28,7 @@ import { apiRequest } from "../Utils/API";
 const SubscribeToProduct = ({ toastManager }) => {
     const { error, showError } = useErrorHandler(null);
 
-    /**
-     * Make request to AWS lambda function that handles creating
-     * a customer and a subscription plan on stripe
-     * -the token parameter  with stripe key and details entered in stripe form
-     *  productPlan parameter is - id of the product plan the user is subscribing to
-     */
+
     const subscribeToProductPlan = async (token, productPlan) => {
         const bodyParams = {
             'stripeToken': token.id,
